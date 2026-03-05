@@ -45,7 +45,7 @@ const Admin = () => {
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center h-screen">
-                <Loader className="h-20 w-20 text-indigo-600 animate-spin" />
+                <Loader className="h-20 w-20 text-red-600 animate-spin" />
             </div>
         )
     }
