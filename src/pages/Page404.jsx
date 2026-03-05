@@ -6,7 +6,7 @@ const Page404 = () => {
             <h1 className="text-5xl md:text-6xl font-extrabold text-red-900 mb-6 leading-tight">
                 404
             </h1>
-            <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
                 La página que estás buscando no existe
             </p>
             <Link

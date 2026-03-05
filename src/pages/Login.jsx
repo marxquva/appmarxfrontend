@@ -40,10 +40,10 @@ const Login = () => {
 
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-white p-10 rounded-3xl shadow-xl border border-slate-200 space-y-6"
+                    className="bg-white p-10 rounded-3xl shadow-xl border border-gray-200 space-y-6"
                 >
                     <div className="relative">
-                        <label className="block text-slate-700 font-bold mb-2 text-sm">
+                        <label className="block text-gray-700 font-bold mb-2 text-sm">
                             Correo
                         </label>
                         <Mail className="absolute left-3 text-gray-400" style={{ top: '65%', transform: 'translateY(-50%)' }} />
@@ -52,13 +52,13 @@ const Login = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="w-full pl-10 px-5 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+                            className="w-full pl-10 px-5 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
                             placeholder="correo@ejemplo.com"
                         />
                     </div>
 
                     <div className="relative">
-                        <label className="block text-slate-700 font-bold mb-2 text-sm">
+                        <label className="block text-gray-700 font-bold mb-2 text-sm">
                             Contraseña
                         </label>
                         <Lock className="absolute left-3 text-gray-400" style={{ top: '65%', transform: 'translateY(-50%)' }} />
@@ -67,7 +67,7 @@ const Login = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            className="w-full pl-10 px-5 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+                            className="w-full pl-10 px-5 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
                             placeholder="********"
                         />
                     </div>
@@ -75,7 +75,7 @@ const Login = () => {
                     <button
                         type="submit"
                         disabled={isLoading}
-                        className="w-full mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-xl flex justify-center items-center h-14 disabled:bg-slate-400 cursor-pointer"
+                        className="w-full mt-6 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-xl flex justify-center items-center h-14 disabled:bg-gray-400 cursor-pointer"
                     >
                         {isLoading ? (
                             <Loader className="h-6 w-6 text-red-600 animate-spin" />

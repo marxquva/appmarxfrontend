@@ -9,5 +9,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #030712;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #030712, rgba(78, 5, 5, 0.9));
 }

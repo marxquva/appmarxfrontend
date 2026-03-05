@@ -1,5 +1,5 @@
 
-import { HashRouter, Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
 import { useAppStore } from "../store/useAppStore"
 import Home from "../pages/Home"
 import Login from "../pages/Login"
@@ -9,11 +9,13 @@ import Profile from "../pages/Profile"
 import Movies from "../pages/Movies"
 import Cart from "../pages/Cart"
 import Shopping from "../pages/shopping"
+import Admin from "../pages/admin"
+import Unauthorized from "../pages/Unauthorized"
 
 
 const AppRouter = () => {
 
-    const { user } = useAppStore()
+    const { user, hasRole } = useAppStore()
 
     return (
         <BrowserRouter>
@@ -62,6 +64,18 @@ const AppRouter = () => {
                                 <Navigate to="/login" />
                                 :
                                 <Shopping />
+                        }
+                    />
+                    <Route
+                        path="/panel"
+                        element={
+                            user === null ?
+                                <Navigate to="/login" />
+                                :
+                                hasRole(["admin", "manager"]) ?
+                                    <Admin />
+                                    :
+                                    <Unauthorized />
                         }
                     />
                     <Route

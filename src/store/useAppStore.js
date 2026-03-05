@@ -13,18 +13,25 @@ export const useAppStore = create(
             isLoading: false,
             error: null,
             cart: [],
-            apiUrl: "https://5a67bc704b1cdcba.mokky.dev",
+            URLAPI: "https://5a67bc704b1cdcba.mokky.dev",
             login: async (email, password) => {
                 try {
                     set({
                         isLoading: true
                     })
+
                     const respuesta = await axios.get(`${API}/users?email=${email}&password=${password}`)
                     console.log("respuesta: ", respuesta)
 
                     if (respuesta?.data?.length > 0) {
                         set({
                             user: respuesta?.data?.[0]
+                        })
+                    }else{
+                        Swal.fire({
+                            title: 'Error',
+                            text: "Error al iniciar sesión, verifique sus credenciales",
+                            icon: 'error',
                         })
                     }
                 }

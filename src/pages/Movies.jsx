@@ -65,11 +65,7 @@ const Movies = () => {
 
     return (
         <div
-            className="flex flex-col items-center justify-start min-h-screen p-5 relative z-10 transition-all duration-300"
-            style={{
-                background: "linear-gradient(to bottom, #030712, rgba(78, 5, 5, 0.9))",
-            }}
-        >
+            className="flex flex-col items-center justify-start min-h-screen p-5 relative z-10 transition-all duration-300">
 
              <div className="relative mb-4 w-[90%] md:w-[70%]">
                 <label className="block text-white font-bold mb-2 text-sm">
@@ -84,7 +80,7 @@ const Movies = () => {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Título de la película..."
-                    className="w-full pl-10 px-5 py-3 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+                    className="w-full pl-10 px-5 py-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
                 />
             </div>
 

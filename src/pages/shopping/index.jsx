@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Shopping = () => {
 
-    const { apiUrl, user } = useAppStore()
+    const { URLAPI, user } = useAppStore()
     const [purchasesUser, setPurchasesUser] = useState([])
     const [loading, setLoading] = useState(false)
     const [sortBy, setSortBy] = useState("date")
@@ -17,7 +17,7 @@ const Shopping = () => {
         const fetchPurchasesUser = async () => {
             setLoading(true)
             try {
-                const response = await axios.get(`${apiUrl}/orders?userId=${user.id}&userEmail=${user.email}`)
+                const response = await axios.get(`${URLAPI}/ordersapp?userId=${user.id}&userEmail=${user.email}`)
                 if (response?.status === 200) {
                     console.log('*************')
                     console.log(response)
@@ -74,14 +74,22 @@ const Shopping = () => {
 
     if (purchasesUser.length === 0) {
         return (
-            <div className="mx-auto px-4 py-16 text-center min-h-screen" style={{
-                background: "linear-gradient(to bottom, #030712, rgba(78, 5, 5, 0.9))",
-            }}>
-                <div className="bg-white rounded-3xl p-16 shadow-sm border border-slate-200 w-xl mx-auto">
-                    <Film size={80} className="mx-auto text-slate-200 mb-6" />
-                    <h2 className="text-3xl font-bold text-slate-800 mb-4">No ha realizado compras hasta el momento.</h2>
-                    <p className="text-slate-500 mb-8">¡Hay miles de peliculas esperando por ti!</p>
-                    <Link to="/movies" className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md">
+            <div className="mx-auto px-4 py-16 min-h-screen flex items-center justify-center text-center">
+                <div className="max-w-xl mx-auto">
+                    <Film size={70} className="mx-auto text-gray-200 mb-6 md:w-20 md:h-20" />
+
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-300 mb-4">
+                        No ha realizado compras hasta el momento.
+                    </h2>
+
+                    <p className="text-sm sm:text-base text-gray-500 mb-8">
+                        ¡Hay miles de películas esperando por ti!
+                    </p>
+
+                    <Link
+                        to="/movies"
+                        className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 md:py-3 md:px-8 rounded-xl transition-colors shadow-md text-sm md:text-base"
+                    >
                         Ver Películas
                     </Link>
                 </div>
@@ -90,17 +98,18 @@ const Shopping = () => {
     }
 
     return (
-        <div className="w-full mx-auto px-4 py-8 h-screen" style={{
-            background: "linear-gradient(to bottom, #030712, rgba(78, 5, 5, 0.9))",
-        }}>
+        <div className="max-w-6xl mx-auto px-4 py-8">
             <div className="mx-auto">
 
-                <div className="border-b border-slate-500 pb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-                    <h2 className="text-2xl font-bold text-white">Mi Historial de Compras</h2>
+                <div className="pb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                        <Film className="text-rose-500" size={32} />
+                        <h2 className="text-2xl font-bold text-white">Mi Historial de Compras</h2>
+                    </div>
                     <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value)}
-                        className="px-4 py-2 bg-white rounded-lg border border-slate-300 text-slate-700 focus:ring-2 focus:ring-red-500 outline-none"
+                        className="px-4 py-2 bg-white rounded-lg border border-gray-300 text-gray-700 focus:ring-2 focus:ring-red-500 outline-none"
                     >
                         <option value="alphabetical">Alfabético [A-Z]</option>
                         <option value="date">Fecha de Compra</option>
@@ -108,7 +117,7 @@ const Shopping = () => {
                     </select>
                 </div>
 
-                <div className="mt-3 bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden px-5">
+                <div className="mt-3 bg-white rounded-3xl shadow-sm border border-gray-200 overflow-hidden px-5">
                     <TableGeneral data={sortedPurchases()} tableType={"shopping"} />
                 </div>
             </div>

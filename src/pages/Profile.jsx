@@ -5,9 +5,7 @@ const Profile = () => {
     const { user } = useAppStore()
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen" style={{
-                background: "linear-gradient(to bottom, #030712, rgba(78, 5, 5, 0.9))",
-            }}>
+        <div className="flex flex-col items-center justify-center h-screen">
             <h1 className="text-2xl md:text-3xl font-extrabold text-white mb-6 leading-tight">
                 Usuario: {user?.name}
             </h1>
