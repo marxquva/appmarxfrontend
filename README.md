@@ -1,16 +1,54 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🏆 Aplicación Películas – React 19
+Aplicación web desarrollada con React 19 que simula una plataforma de compra de películas. Permite a los usuarios explorar un catálogo, agregar productos a un carrito y gestionar pedidos.
 
-Currently, two official plugins are available:
+Dependiendo del rol del usuario, es posible:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Visualizar sus propios pedidos
+- Consultar todos los pedidos registrados en el sistema (rol administrador)
 
-## React Compiler
+## 🛠️ Tecnologías utilizadas
+| Tecnología           | Uso                                                   |
+| -------------------- | ----------------------------------------------------- |
+| **React 19**         | Librería principal para la construcción de interfaces |
+| **React Router DOM** | Manejo de rutas y navegación entre vistas             |
+| **Zustand**          | Manejo de estado global de forma simple y escalable   |
+| **Axios**            | Cliente HTTP para la comunicación con el backend      |
+| **TailwindCSS**      | Estilización rápida y responsive                      |
+| **Lucide React**     | Librería de íconos modernos y personalizables         |
+| **SweetAlert2**      | Alertas y notificaciones interactivas                 |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## 🏗️ Arquitectura del proyecto:
+El proyecto sigue una arquitectura modular y organizada en capas, diseñada para mantener el código escalable, reutilizable y fácil de mantener. La estructura principal se divide en diferentes carpetas, cada una con una responsabilidad claramente definida:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **pages** para las vistas principales de la aplicación. Cada página representa una pantalla completa (por ejemplo: catálogo, carrito, pedidos).
+
+- Los **components** componentes reutilizables como el layout, card y ventanas de dialogo.
+
+- **router** para la configuración de rutas de la aplicación utilizando React Router.
+
+- **store** para manejar el estado global de la aplicación mediante Zustand.
+
+
+## Diseño Responsive: 
+El diseño se validó para funcionar correctamente tanto en dispositivos móviles como en escritorio, usando las utilidades de TailwindCSS.
+
+## Desplegar aplicacion
+Instalar dependencias de la aplicacion:
+
+```bash
+npm install
+```
+
+Para iniciar un servidor de desarrollo local, ejecute:
+
+```bash
+npm run dev
+```
+
+## Aplicacion disponible
+
+- Aplicacion esta disponible en [Aplicacion Peliculas](https://appmarxfrontend.vercel.app/)
+Usuario: marx@gmail.com
+Clave de acceso: marx123

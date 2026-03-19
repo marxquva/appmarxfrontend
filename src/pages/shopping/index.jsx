@@ -28,7 +28,7 @@ const Shopping = () => {
             catch (error) {
                 Swal.fire({
                     title: 'Error',
-                    text: "Hubo un error al momento de traer las compras del usuario",
+                    text: "Hubo un error al momento de traer las compras del usuario" + error,
                     icon: 'error',
                 })
             }
