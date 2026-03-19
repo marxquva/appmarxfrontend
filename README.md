@@ -1,5 +1,5 @@
 
-# 🏆 Aplicación Películas – React 19
+# 🍿 Aplicación Películas – React 19
 Aplicación web desarrollada con React 19 que simula una plataforma de compra de películas. Permite a los usuarios explorar un catálogo, agregar productos a un carrito y gestionar pedidos.
 
 Dependiendo del rol del usuario, es posible:
